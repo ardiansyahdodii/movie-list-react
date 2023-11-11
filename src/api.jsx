@@ -4,7 +4,7 @@ export const baseURL = 'https://api.themoviedb.org/3'
 const apiKey = '416f4c3e63184c09eb924a672af65100'
 export const imgURL = 'https://image.tmdb.org/t/p/w500'
 
-export const getMovieList = async () =>{
+export const getMovieList = async () => {
     const movie = await axios.get(`${baseURL}/movie/popular?page=1&api_key=${apiKey}`)
 
     return movie.data.results
@@ -34,7 +34,6 @@ export const searchTv = async (isi) => {
 export const detailMovie = async (id) => {
     const detailMovie = await axios.get(`${baseURL}/movie/${id}?api_key=${apiKey}`)
 
-    // console.log(search.data.results) 
     return detailMovie.data
 }
 
@@ -45,7 +44,7 @@ export const detailTv = async (id) => {
     return detailTv.data
 }
 
-export const topRated = async (id) => {
+export const topRated = async () => {
     const topRated = await axios.get(`${baseURL}/movie/top_rated?page=1&api_key=${apiKey}`)
 
     //console.log(topRated.data.results) 

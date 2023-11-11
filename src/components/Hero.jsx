@@ -1,7 +1,6 @@
 import React from 'react'
 import { imgURL } from '../api'
-// import contoh from '../assets/img/Kingsman2.jpg'
-// import contoh2 from '../assets/img/Toy-Story.jpg'
+import { Link } from 'react-router-dom'
 
 const Hero = ({banner}) => {
     return (
@@ -24,6 +23,15 @@ const Hero = ({banner}) => {
                     <div className=' text-3xl font-bold'>
                         <span>⭐</span>{banner.vote_average}
                     </div>
+                    <Link 
+                    className='mt-5'
+                    to={`/movie/${banner.id}`}
+                    // onClick={() => getDetailTopRated(banner.id)}
+                    >
+                        <button className='bg-yellow-500 text-black font-semibold text-xl px-5 py-2 rounded-xl' >
+                            See Detail
+                        </button>
+                    </Link>
                 </div>
             </div>
         </div>

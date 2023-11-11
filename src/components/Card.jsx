@@ -1,14 +1,13 @@
 import React from 'react'
 import { imgURL } from '../api'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 
 const Card = (props) => {
 
     //console.log("Movie : ", props.title)
     return (
-        <Link 
+        <div 
         className='max-w-max group transition'
-        to={`/detail/${props.id}`}
         >
             <img
                 src={`${imgURL}${props.image}`}
@@ -21,7 +20,7 @@ const Card = (props) => {
                 </div>
                 <div className='text-sm mt-5'>{props.release}</div>
             </div>
-        </Link>
+        </div>
     )
 }
 

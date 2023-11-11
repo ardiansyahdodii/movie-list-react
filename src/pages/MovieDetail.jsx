@@ -1,24 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import contoh2 from '../assets/img/Toy-Story.jpg'
 import { useParams } from 'react-router-dom'
-import { detailMovie, detailTv, imgURL } from '../api'
+import { detailMovie, imgURL } from '../api'
 
 const MovieDetail = () => {
 
-  const {id} = useParams()
+  const { id } = useParams()
   const [detail, setDetail] = useState([])
 
-  useEffect(()=>{
+  useEffect(() => {
     detailMovie(id)
-    .then((result) =>{
-      setDetail(result)
-    })
-
-    detailTv(id)
-    .then((result) =>{
-      setDetail(result)
-    })
-  },[id])
+      .then((result) => {
+        setDetail(result)
+      })
+  }, [id])
 
   console.log(detail)
 
@@ -34,7 +28,7 @@ const MovieDetail = () => {
           </div>
           <div className='ms-[250px]'>
             <div className='font-bold text-4xl'>
-              {detail.title ? detail.title : detail.name}
+              {detail.title} ({detail.release_date})
             </div>
             <div className='flex justify-start items-center mt-10 '>
               <div className='font-semibold text-3xl'>⭐{detail.vote_average}</div>
