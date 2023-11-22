@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { searchContext } from '../../contexts/searchContext'
 import { useNavigate } from 'react-router-dom'
 import { searchMovie, searchTv } from '../../api'
@@ -22,9 +22,9 @@ const Input = () => {
     }
 
 return (
-    <div className=''>
+    <div className='flex justify-center items-center'>
         <input
-            className="w-full text-xl text-slate-900 placeholder-slate-500 shadow-sm pl-3 pr-10 h-14 rounded-lg bg-stone-300 focus:outline-none"
+            className="w-32 md:w-full text-base md:text-xl text-slate-900 placeholder-slate-500 placeholder:text-xs placeholder:md:text-xl shadow-sm pl-3 pr-10 h-6 md:h-14 rounded-md md:rounded-lg bg-stone-300 focus:outline-none"
             type="text"
             placeholder="Search Movie"
             onChange={({ target }) => search(target.value)}

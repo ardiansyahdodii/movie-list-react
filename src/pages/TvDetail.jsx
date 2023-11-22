@@ -16,33 +16,34 @@ const TvDetail = () => {
 
     console.log(detail)
 
+    // console.log(detail.name)
     return (
         <div className='text-white'>
-            <div className='h-[465px] bg-slate-600'>
+            <div className='h-[225px] md:h-[465px] bg-slate-600'>
                 <img src={`${imgURL}${detail.backdrop_path}`} alt="" className='h-full w-full object-cover object-top' />
             </div>
-            <div className='m-10'>
+            <div className='mx-10 my-5 md:m-10'>
                 <div className='relative'>
-                    <div className='absolute w-[205px] h-[308px]  -bottom-5'>
+                    <div className='absolute w-[110px] h-[150px] md:w-[205px] md:h-[308px] -bottom-14 md:-bottom-28'>
                         <img src={`${imgURL}${detail.poster_path}`} alt="" className='h-full w-full object-cover rounded-xl' />
                     </div>
-                    <div className='ms-[250px]'>
-                        <div className='font-bold text-4xl'>
-                            {detail.name} ({detail.first_air_date})
-                        </div>
-                        <div className='flex justify-start items-center mt-10 '>
-                            <div className='font-semibold text-3xl'>⭐{detail.vote_average}</div>
-                            <button className='text-black font-medium text-lg bg-yellow-500 py-1 px-4 mx-12 rounded-lg'>
-                                Play Trailer
-                            </button>
-                        </div>
+                </div>
+                <div className='ms-[120px] md:ms-[250px]'>
+                    <div className='font-bold text-xl md:text-4xl'>
+                        {detail.name} ({detail.first_air_date})
+                    </div>
+                    <div className='flex justify-start items-center mt-3 md:mt-10 flex-wrap'>
+                        <div className='font-semibold text:lg md:text-3xl'>⭐{detail.vote_average}</div>
+                        <button className='text-black font-medium text-sm md:text-lg bg-yellow-500 py-1 px-3 mx-5 md:mx-12 rounded-lg'>
+                            Play Trailer
+                        </button>
                     </div>
                 </div>
-                <div className='mt-[80px] w-2/3'>
-                    <div className='font-semibold text-3xl'>
+                <div className='mt-[80px] w-full md:w-2/3'>
+                    <div className='font-semibold text-xl md:text-3xl'>
                         Overview
                     </div>
-                    <div className='text-xl mt-5'>
+                    <div className='text-base md:text-xl mt-5'>
                         {detail.overview}
                     </div>
                 </div>
