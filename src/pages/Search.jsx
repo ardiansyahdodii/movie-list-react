@@ -17,8 +17,8 @@ function Search() {
       </div>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mt-10'>
         {hasilSearchMovie.map((movie) => (
-          <Link to={`/movie/${movie.id}`}>
-            <Card key={movie.id} title={movie.title} image={movie.poster_path} release={movie.release_date} />
+          <Link key={movie.id} to={`/movie/${movie.id}`}>
+            <Card title={movie.title} image={movie.poster_path} release={movie.release_date} />
           </Link>
         ))}
       </div>
@@ -28,8 +28,8 @@ function Search() {
       </div>
       <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 mt-10'>
         {hasilSearchTv.map((tvShow) => (
-          <Link to={`/tv/${tvShow.id}`}>
-            <Card key={tvShow.id} title={tvShow.name} image={tvShow.poster_path} release={tvShow.first_air_date} />
+          <Link key={tvShow.id} to={`/tv/${tvShow.id}`}>
+            <Card title={tvShow.name} image={tvShow.poster_path} release={tvShow.first_air_date} />
           </Link>
         ))}
       </div>

@@ -32,8 +32,8 @@ const MovieDetail = () => {
             {detail.title} ({detail.release_date})
           </div>
           <div className='flex justify-start items-center mt-3 md:mt-10 flex-wrap'>
-            <div className='font-semibold text:lg md:text-3xl'>⭐{detail.vote_average}</div>
-            <button className='text-black font-medium text-sm md:text-lg bg-yellow-500 py-1 px-3 mx-5 md:mx-12 rounded-lg'>
+            <div className='font-semibold text:lg md:text-3xl'>⭐ {parseFloat(detail.vote_average).toFixed(1)}</div>
+            <button className='text-black font-medium text-sm md:text-lg bg-yellow-500 py-1 px-2 mx-2 md:mx-12 rounded-lg'>
               Play Trailer
             </button>
           </div>
