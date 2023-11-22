@@ -14,7 +14,7 @@ const TvDetail = () => {
             })
     }, [id])
 
-    console.log(detail)
+    // console.log(detail)
 
     // console.log(detail.name)
     return (
