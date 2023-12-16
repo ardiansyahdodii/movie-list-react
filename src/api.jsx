@@ -51,4 +51,10 @@ export const topRated = async () => {
     return topRated.data.results
 }
 
+export const movieTrailer = async (id) =>{
+    const movieTrailer = await axios.get(`${baseURL}/movie/${id}/videos?api_key=${apiKey}`)
+
+    return movieTrailer.data.results
+}
+
 

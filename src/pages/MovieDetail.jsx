@@ -1,11 +1,15 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import { detailMovie, imgURL } from '../api'
+import 'react-responsive-modal/styles.css';
+import { Modal } from 'react-responsive-modal';
+import { detailMovie, imgURL, movieTrailer } from '../api'
+import TrailerModal from '../components/TrailerModal';
 
 const MovieDetail = () => {
 
   const { id } = useParams()
   const [detail, setDetail] = useState([])
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
     detailMovie(id)
@@ -13,6 +17,9 @@ const MovieDetail = () => {
         setDetail(result)
       })
   }, [id])
+
+  const onOpenModal = () => setOpen(true);
+  const onCloseModal = () => setOpen(false);
 
   // console.log(detail)
 
@@ -33,7 +40,10 @@ const MovieDetail = () => {
           </div>
           <div className='flex justify-start items-center mt-3 md:mt-10 flex-wrap'>
             <div className='font-semibold text:lg md:text-3xl'>⭐ {parseFloat(detail.vote_average).toFixed(1)}</div>
-            <button className='text-black font-medium text-sm md:text-lg bg-yellow-500 py-1 px-2 mx-2 md:mx-12 rounded-lg'>
+            <button
+              onClick={onOpenModal}
+              className='text-black font-medium text-sm md:text-lg bg-yellow-500 py-1 px-2 mx-2 md:mx-12 rounded-lg'
+            >
               Play Trailer
             </button>
           </div>
@@ -47,6 +57,14 @@ const MovieDetail = () => {
           </div>
         </div>
       </div>
+      <Modal 
+      open={open} 
+      onClose={onCloseModal}
+      center
+      classNames={{modal: "bg-slate-200"}}
+      >
+        <TrailerModal id={id}/>
+      </Modal>
     </div>
   )
 }

@@ -9,6 +9,7 @@ const Input = () => {
     const navigate = useNavigate()
 
     const search = async (isi) => {
+        console.log(isi)
         if (isi.length >= 3) {
             const query = await searchMovie(isi)
             const query2 = await searchTv(isi)
